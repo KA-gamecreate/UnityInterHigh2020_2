@@ -10,9 +10,12 @@ public class Charachange : MonoBehaviour
 
     public GameObject ghost;
     public GameObject human;
-   
 
-   
+    public Rigidbody2D char_rb;
+    float ForceGravity = 100;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,10 +24,11 @@ public class Charachange : MonoBehaviour
         human.gameObject.SetActive(true);
         ghost.gameObject.SetActive(false);
         gameObject.AddComponent<Rigidbody2D>();
+        char_rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -38,6 +42,8 @@ public class Charachange : MonoBehaviour
             human.gameObject.SetActive(true);
             ghost.gameObject.SetActive(false);
             gameObject.AddComponent<Rigidbody2D>();
+            char_rb = gameObject.GetComponent<Rigidbody2D>();
+            char_rb.AddForce(Vector3.down * ForceGravity);
         }
 
        else if(charaB == true)
