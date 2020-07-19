@@ -10,10 +10,7 @@ public class human : MonoBehaviour
     public GameObject hasami;
     public GameObject hasami_image;
     public GameObject tuta;
-    public GameObject goal;
-    public GameObject idou;
-    BoxCollider2D boxCollider2D;
-
+ 
 
     // Start is called before the first frame update
     void Start()
@@ -24,11 +21,6 @@ public class human : MonoBehaviour
         hasami.gameObject.SetActive(true);
         hasami_image.gameObject.SetActive(false);
         tuta.gameObject.SetActive(true);
-        goal.gameObject.SetActive(true);
-        idou.gameObject.SetActive(false);
-     
-        
-
     }
 
     // Update is called once per frame
@@ -69,25 +61,15 @@ public class human : MonoBehaviour
             }
 
         if (hasami_image.gameObject.activeSelf)
-        {
+            {
             if(col.gameObject.tag == "tuta")
-            {
-                tuta.gameObject.SetActive(false);
-                hasami_image.gameObject.SetActive(false);
+                {
+                    tuta.gameObject.SetActive(false);
+                    hasami_image.gameObject.SetActive(false);
+                }
             }
+        
         }
-        if (Key_image.gameObject.activeSelf)
-        {
-            if (col.gameObject.tag == "goal")
-            {
-                goal.gameObject.SetActive(false);
-                Key_image.gameObject.SetActive(false);
-                idou.gameObject.SetActive(true);
-                boxCollider2D.isTrigger = true;
-            }
-        }
-
-    }
-    }
+}
 
 
