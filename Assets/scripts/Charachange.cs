@@ -65,9 +65,14 @@ public class Charachange : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.J))
             {
                 char_rb.AddForce(Vector2.up * 500, ForceMode2D.Impulse);
-                Debug.Log("2");
+                Invoke("JumpStop", 1);
             }
             
         }
+    }
+    void JumpStop()
+    {
+        char_rb.AddForce(Vector2.down * 500, ForceMode2D.Impulse);
+        char_rb.velocity = Vector3.zero;
     }
 }

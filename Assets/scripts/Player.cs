@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+
 public class Player : MonoBehaviour
 {
+
 
     float speed = 1.5f;
     int key = 0;

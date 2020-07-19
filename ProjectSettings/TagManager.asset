@@ -7,6 +7,10 @@ TagManager:
   - ghost
   - enemy
   - Ground
+  - Key
+  - hasami
+  - tuta
+  - goal
   layers:
   - Default
   - TransparentFX
