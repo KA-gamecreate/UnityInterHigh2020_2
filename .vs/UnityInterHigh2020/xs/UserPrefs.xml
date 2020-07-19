@@ -1,10 +1,11 @@
 ﻿<Properties StartupConfiguration="{E9E6069E-0B6D-C33E-4628-52AE66724C5F}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/human.cs">
     <Files>
-      <File FileName="Assets/camera.cs" Line="18" Column="2" />
-      <File FileName="Assets/Player.cs" Line="10" Column="23" />
-      <File FileName="Assets/enemy.cs" Line="7" Column="33" />
-      <File FileName="Assets/human.cs" Line="1" Column="1" />
+      <File FileName="Assets/camera.cs" Line="16" Column="34" />
+      <File FileName="Assets/Player.cs" Line="24" Column="46" />
+      <File FileName="Assets/enemy.cs" Line="23" Column="25" />
+      <File FileName="Assets/human.cs" Line="10" Column="17" />
+      <File FileName="Assets/scripts/Charachange.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,7 +13,9 @@
           <Node name="UnityInterHigh2020" expanded="True" />
           <Node name="UnityInterHigh2020" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="Player.cs" selected="True" />
+              <Node name="scripts" expanded="True">
+                <Node name="human.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>
@@ -24,6 +27,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="91041684-86ac-4e32-a5f1-7adf90c80e53" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

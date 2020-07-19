@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ghost
   - enemy
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -42,4 +43,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3528092139
+    locked: 0
+  - name: Map
+    uniqueID: 4093386389
     locked: 0
