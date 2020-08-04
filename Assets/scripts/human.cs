@@ -10,7 +10,11 @@ public class human : MonoBehaviour
     public GameObject hasami;
     public GameObject hasami_image;
     public GameObject tuta;
- 
+    public GameObject salt_image;
+    public GameObject salt;
+    public GameObject horror;
+    public GameObject bikkuriimage;
+
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +25,10 @@ public class human : MonoBehaviour
         hasami.gameObject.SetActive(true);
         hasami_image.gameObject.SetActive(false);
         tuta.gameObject.SetActive(true);
+        salt.gameObject.SetActive(true);
+        salt_image.gameObject.SetActive(false);
+        horror.gameObject.SetActive(true);
+        bikkuriimage.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -59,6 +67,12 @@ public class human : MonoBehaviour
                 hasami_image.gameObject.SetActive(true);
                 Debug.Log("hasami");
             }
+        if (col.gameObject.tag == "salt")
+        {
+            salt.gameObject.SetActive(false);
+            salt_image.gameObject.SetActive(true);
+            Debug.Log("salt");
+        }
 
         if (hasami_image.gameObject.activeSelf)
             {
@@ -68,8 +82,27 @@ public class human : MonoBehaviour
                     hasami_image.gameObject.SetActive(false);
                 }
             }
-        
+
+        if (salt_image.gameObject.activeSelf)
+        {
+            if (col.gameObject.tag == "enemy")
+            {
+                bikkuriimage.gameObject.SetActive(true);
+                Debug.Log("ready");
+                if (Input.GetKeyDown(KeyCode.A))
+                {
+                    Destroy(col.gameObject, 1.0f);
+
+                }
+            }
         }
+    }
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        bikkuriimage.gameObject.SetActive(false);
+    }
+
 }
+
 
 

@@ -13,6 +13,8 @@ public class Charachange : MonoBehaviour
     public Rigidbody2D char_rb;
     float ForceGravity = 100;
     bool jump = false;
+   
+    
 
 
 
@@ -27,6 +29,7 @@ public class Charachange : MonoBehaviour
         //gameObject.AddComponent<Rigidbody2D>();
         //char_rb = gameObject.GetComponent<Rigidbody2D>();
         jump = true;
+       
     }
 
     // Update is called once per frame
@@ -64,7 +67,7 @@ public class Charachange : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.J))
             {
-                char_rb.AddForce(Vector2.up * 500, ForceMode2D.Impulse);
+                char_rb.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
                 Invoke("JumpStop", 1);
             }
             
@@ -72,7 +75,7 @@ public class Charachange : MonoBehaviour
     }
     void JumpStop()
     {
-        char_rb.AddForce(Vector2.down * 500, ForceMode2D.Impulse);
+        char_rb.AddForce(Vector2.down * 100, ForceMode2D.Impulse);
         char_rb.velocity = Vector3.zero;
     }
 }

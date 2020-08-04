@@ -11,6 +11,7 @@ TagManager:
   - hasami
   - tuta
   - goal
+  - salt
   layers:
   - Default
   - TransparentFX
