@@ -23,6 +23,10 @@ public class goal : MonoBehaviour
         if(col.gameObject.CompareTag("Player"))
         {
             col.gameObject.SendMessage("Gameclear");
+            PlayerPrefs.SetInt("SCORE", 3);
+            Debug.Log("point");
+            PlayerPrefs.Save();
+
         }
     }
 }
