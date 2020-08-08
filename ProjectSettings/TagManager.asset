@@ -12,6 +12,7 @@ TagManager:
   - tuta
   - goal
   - salt
+  - hashigo
   layers:
   - Default
   - TransparentFX

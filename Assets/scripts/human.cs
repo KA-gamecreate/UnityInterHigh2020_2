@@ -14,6 +14,8 @@ public class human : MonoBehaviour
     public GameObject salt;
     public GameObject horror;
     public GameObject bikkuriimage;
+    public GameObject hasigo;
+    float speed = 1.5f;
 
 
     // Start is called before the first frame update
@@ -52,21 +54,21 @@ public class human : MonoBehaviour
             animator.SetInteger("Chara", 0);
         }
     }
-        void OnCollisionStay2D(Collision2D col)
+    void OnCollisionStay2D(Collision2D col)
+    {
+
+        if (col.gameObject.tag == "Key")
         {
-        
-            if (col.gameObject.tag == "Key")
-            {
-                Key.gameObject.SetActive(false);
-                Key_image.gameObject.SetActive(true);
-                Debug.Log("key");
-            }
-            if (col.gameObject.tag == "hasami")
-            {
-                hasami.gameObject.SetActive(false);
-                hasami_image.gameObject.SetActive(true);
-                Debug.Log("hasami");
-            }
+            Key.gameObject.SetActive(false);
+            Key_image.gameObject.SetActive(true);
+            Debug.Log("key");
+        }
+        if (col.gameObject.tag == "hasami")
+        {
+            hasami.gameObject.SetActive(false);
+            hasami_image.gameObject.SetActive(true);
+            Debug.Log("hasami");
+        }
         if (col.gameObject.tag == "salt")
         {
             salt.gameObject.SetActive(false);
@@ -75,34 +77,51 @@ public class human : MonoBehaviour
         }
 
         if (hasami_image.gameObject.activeSelf)
+        {
+            if (col.gameObject.tag == "tuta")
             {
-            if(col.gameObject.tag == "tuta")
+                tuta.gameObject.SetActive(false);
+                hasami_image.gameObject.SetActive(false);
+            }
+        }
+        if (salt_image.gameObject.activeSelf)
+            {
+                Debug.Log("A");
+                if (col.gameObject.tag == "enemy")
                 {
-                    tuta.gameObject.SetActive(false);
-                    hasami_image.gameObject.SetActive(false);
+                    bikkuriimage.gameObject.SetActive(true);
+                    Debug.Log("ready");
+                    if (Input.GetKeyDown(KeyCode.A))
+                    {
+                        Destroy(col.gameObject, 1.0f);
+                    }
                 }
             }
+    }
 
-        if (salt_image.gameObject.activeSelf)
+    void OnTriggerEnterStay2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "hashigo")
         {
-            if (col.gameObject.tag == "enemy")
+            Debug.Log("hasigo");
+            if (Input.GetKeyDown("up"))
             {
-                bikkuriimage.gameObject.SetActive(true);
-                Debug.Log("ready");
-                if (Input.GetKeyDown(KeyCode.A))
-                {
-                    Destroy(col.gameObject, 1.0f);
-
-                }
+                transform.position += new Vector3(0, speed * Time.deltaTime, 0);
+            }
+            if (Input.GetKeyDown("down"))
+            {
+                transform.position += new Vector3(0, -speed * Time.deltaTime, 0);
             }
         }
     }
+
     void OnCollisionExit2D(Collision2D collision)
-    {
-        bikkuriimage.gameObject.SetActive(false);
+        {
+            bikkuriimage.gameObject.SetActive(false);
+        }
+
     }
 
-}
 
 
 

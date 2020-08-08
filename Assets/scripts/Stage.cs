@@ -26,51 +26,57 @@ public class Stage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(stage_num >= 2)
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            PlayerPrefs.DeleteKey("SCORE");
+        }
+        
+        if(stage_num >= 1)
         {
             two.SetActive(true);
+        }
+        if(stage_num >= 2)
+        {
+           three.SetActive(true);
             Debug.Log("2");
         }
         if (stage_num >= 3)
         {
-            three.SetActive(true);
+            four.SetActive(true);
             Debug.Log("3");
         }
         if (stage_num >= 4)
         {
-            four.SetActive(true);
+            five.SetActive(true);
         }
         if (stage_num >= 5)
         {
-            five.SetActive(true);
+            six.SetActive(true);
         }
         if (stage_num >= 6)
         {
-            six.SetActive(true);
+            seven.SetActive(true);
         }
         if (stage_num >= 7)
         {
-            seven.SetActive(true);
+            eight.SetActive(true);
         }
         if (stage_num >= 8)
         {
-            eight.SetActive(true);
+            nine.SetActive(true);
         }
         if (stage_num >= 9)
         {
-            nine.SetActive(true);
+            ten.SetActive(true);
         }
         if (stage_num >= 10)
         {
-            ten.SetActive(true);
+            eleven.SetActive(true);
         }
         if (stage_num >= 11)
         {
-            eleven.SetActive(true);
-        }
-        if (stage_num >= 12)
-        {
             twelve.SetActive(true);
         }
+      
     }
 }

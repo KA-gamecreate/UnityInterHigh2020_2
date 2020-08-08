@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class goal : MonoBehaviour
 {
-    public GameObject owari;
+    
     public GameObject stage;
+    public int Opennum;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,7 @@ public class goal : MonoBehaviour
         if(col.gameObject.CompareTag("Player"))
         {
             col.gameObject.SendMessage("Gameclear");
-            PlayerPrefs.SetInt("SCORE", 3);
+            PlayerPrefs.SetInt("SCORE", Opennum);
             Debug.Log("point");
             PlayerPrefs.Save();
 

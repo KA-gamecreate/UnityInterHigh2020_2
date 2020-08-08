@@ -1253,6 +1253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owari: {fileID: 0}
   stage: {fileID: 467996194}
+  Opennum: 4
 --- !u!1 &974940361
 GameObject:
   m_ObjectHideFlags: 0
@@ -2004,7 +2005,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 2.709138, y: 0.93529856}
+  m_ConnectedAnchor: {x: 2.7285583, y: 0.9420033}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0

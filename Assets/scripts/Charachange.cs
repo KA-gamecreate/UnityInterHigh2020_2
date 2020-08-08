@@ -13,8 +13,10 @@ public class Charachange : MonoBehaviour
     public Rigidbody2D char_rb;
     float ForceGravity = 100;
     bool jump = false;
-   
-    
+
+
+
+
 
 
 
@@ -59,10 +61,13 @@ public class Charachange : MonoBehaviour
                 Destroy(GetComponent<Rigidbody2D>());
             }
         }
+ 
+        
     }
 
    void OnCollisionStay2D(Collision2D col)
     {
+
         if (jump && col.gameObject.tag == "Ground")
         {
             if (Input.GetKeyDown(KeyCode.J))
@@ -70,6 +75,7 @@ public class Charachange : MonoBehaviour
                 char_rb.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
                 Invoke("JumpStop", 1);
             }
+
             
         }
     }
@@ -78,4 +84,5 @@ public class Charachange : MonoBehaviour
         char_rb.AddForce(Vector2.down * 100, ForceMode2D.Impulse);
         char_rb.velocity = Vector3.zero;
     }
+   
 }

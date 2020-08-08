@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     bool gameclear = false;
     public GameObject gameovercanvas;
     public GameObject gameclearcanvas;
+   
 
 
     // Start is called before the first frame update
@@ -26,24 +27,26 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!gameover){
+        if (!gameover &&!gameclear){
+          
 
-
-            if (Input.GetKey("right"))
-            {
-                transform.position += new Vector3(speed * Time.deltaTime, 0, 0);
-                key = 1;
+                if (Input.GetKey("right"))
+                {
+                    transform.position += new Vector3(speed * Time.deltaTime, 0, 0);
+                    key = 1;
+                }
+                if (Input.GetKey("left"))
+                {
+                    transform.position += new Vector3(-speed * Time.deltaTime, 0, 0);
+                    key = -1;
+                }
+                if (key != 0)
+                {
+                    transform.localScale = new Vector3(key, 1, 1);
+                }
             }
-            if (Input.GetKey("left"))
-            {
-                transform.position += new Vector3(-speed * Time.deltaTime, 0, 0);
-                key = -1;
-            }
-            if (key != 0)
-            {
-                transform.localScale = new Vector3(key, 1, 1);
-            }
-        }
+        
+       
     }
 
 
