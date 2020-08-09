@@ -54,6 +54,11 @@ public class human : MonoBehaviour
         {
             animator.SetInteger("Chara", 0);
         }
+        if (Input.GetKeyUp(KeyCode.J))
+        {
+            animator.SetInteger("jump", 0);
+        }
+
     }
     
     void OnCollisionStay2D(Collision2D col)
@@ -77,8 +82,16 @@ public class human : MonoBehaviour
             salt_image.gameObject.SetActive(true);
             Debug.Log("salt");
         }
-       
+        if (col.gameObject.tag == "Ground")
+        {
+            if (Input.GetKeyDown(KeyCode.J))
+            {
+                animator.SetInteger("jump", 1);
+            }
+        }
            
+            
+         
    
        
         if (col.gameObject.tag == "tuta")
@@ -90,7 +103,7 @@ public class human : MonoBehaviour
             }
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         
         if (collision.gameObject.tag == "enemy")
@@ -116,6 +129,7 @@ public class human : MonoBehaviour
     {
         bikkuriimage.gameObject.SetActive(false);
     }
+   
 
 }
 

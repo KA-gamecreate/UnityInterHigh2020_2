@@ -76,7 +76,6 @@
     <Compile Include="Assets\scripts\restart.cs" />
     <Compile Include="Assets\scripts\Stage.cs" />
     <Compile Include="Assets\scripts\Story1.cs" />
-    <Compile Include="Assets\scripts\talk.cs" />
     <Compile Include="Assets\scripts\TextController.cs" />
     <Compile Include="Assets\scripts\title.cs" />
     <Reference Include="Unity.Timeline.Editor">

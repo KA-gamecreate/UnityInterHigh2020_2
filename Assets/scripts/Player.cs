@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     bool gameclear = false;
     bool hasigo = false;
     bool down = false;
-    
+    bool enemy = false;
     public GameObject gameovercanvas;
     public GameObject gameclearcanvas;
     public Rigidbody2D rb2d;
@@ -30,12 +30,28 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (down == true)
+        //if (hasigo == true)
+        //{
 
-            if (Input.GetKey("down"))
-            {
-                rb2d.velocity = Vector2.zero;
-            }
+            //if (Input.GetKeyDown("up"))
+            //{
+               // Debug.Log("hasigo");
+                //transform.position += new Vector3(0, 7, 0);
+                
+              
+            //}
+
+        //}
+        //if(down == true){
+            //Debug.Log("down");
+            //if (Input.GetKeyDown("down"))
+            //{
+
+                //transform.position += new Vector3(0, -7, 0);
+                
+                
+            //}
+        //}
 
         if (!gameover &&!gameclear){
           
@@ -58,30 +74,25 @@ public class Player : MonoBehaviour
         
        
     }
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionStay2D(Collision2D col)
     {
-        if (other.gameObject.tag == "hashigo") {
-            hasigo = true;
-        }
-        if(other.gameObject.tag == "down")
+        if (col.gameObject.tag == "down")
         {
-            down = true;
-            Debug.Log("Down");
+            if (Input.GetKeyDown("down"))
+            {
+                col.gameObject.GetComponent<PlatformEffector2D>().surfaceArc = 0;
+                StartCoroutine(TurnSurfaceArc(col.gameObject));
+            }
+            if (Input.GetKeyDown("up"))
+            {
+                transform.position += Vector3.up * 1.2f;
+            }
         }
-        
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    private IEnumerator TurnSurfaceArc(GameObject obj)
     {
-        if(collision.gameObject.tag == "hashigo")
-        {
-            hasigo = false;
-
-        }
-        if(collision.gameObject.tag == "down")
-        {
-            down = false;
-        }
-
+        yield return new WaitForSeconds(1.0f);
+        obj.GetComponent<PlatformEffector2D>().surfaceArc = 180;
     }
 
 
