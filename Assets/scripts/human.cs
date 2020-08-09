@@ -14,7 +14,8 @@ public class human : MonoBehaviour
     public GameObject salt;
     public GameObject horror;
     public GameObject bikkuriimage;
-    public GameObject hasigo;
+   
+   
     float speed = 1.5f;
 
 
@@ -54,6 +55,7 @@ public class human : MonoBehaviour
             animator.SetInteger("Chara", 0);
         }
     }
+    
     void OnCollisionStay2D(Collision2D col)
     {
 
@@ -75,52 +77,48 @@ public class human : MonoBehaviour
             salt_image.gameObject.SetActive(true);
             Debug.Log("salt");
         }
-
-        if (hasami_image.gameObject.activeSelf)
+       
+           
+   
+       
+        if (col.gameObject.tag == "tuta")
         {
-            if (col.gameObject.tag == "tuta")
+            if (hasami_image.gameObject.activeSelf == true)
             {
                 tuta.gameObject.SetActive(false);
                 hasami_image.gameObject.SetActive(false);
             }
         }
-        if (salt_image.gameObject.activeSelf)
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+        if (collision.gameObject.tag == "enemy")
+        {
+            if (salt_image.gameObject.activeSelf == true)
             {
-                Debug.Log("A");
-                if (col.gameObject.tag == "enemy")
+                bikkuriimage.gameObject.SetActive(true);
+
+                if (Input.GetKeyDown(KeyCode.A))
                 {
-                    bikkuriimage.gameObject.SetActive(true);
-                    Debug.Log("ready");
-                    if (Input.GetKeyDown(KeyCode.A))
-                    {
-                        Destroy(col.gameObject, 1.0f);
-                    }
+                    Destroy(collision.gameObject, 1.0f);
+                    Debug.Log("destroy");
+                    salt_image.gameObject.SetActive(false);
+
                 }
             }
+        }
     }
 
-    void OnTriggerEnterStay2D(Collider2D other)
+
+
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if (other.gameObject.tag == "hashigo")
-        {
-            Debug.Log("hasigo");
-            if (Input.GetKeyDown("up"))
-            {
-                transform.position += new Vector3(0, speed * Time.deltaTime, 0);
-            }
-            if (Input.GetKeyDown("down"))
-            {
-                transform.position += new Vector3(0, -speed * Time.deltaTime, 0);
-            }
-        }
+        bikkuriimage.gameObject.SetActive(false);
     }
 
-    void OnCollisionExit2D(Collision2D collision)
-        {
-            bikkuriimage.gameObject.SetActive(false);
-        }
+}
 
-    }
 
 
 

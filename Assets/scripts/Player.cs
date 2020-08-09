@@ -12,9 +12,12 @@ public class Player : MonoBehaviour
     int key = 0;
     bool gameover = false;
     bool gameclear = false;
+    bool hasigo = false;
+    bool down = false;
+    
     public GameObject gameovercanvas;
     public GameObject gameclearcanvas;
-   
+    public Rigidbody2D rb2d;
 
 
     // Start is called before the first frame update
@@ -27,6 +30,13 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (down == true)
+
+            if (Input.GetKey("down"))
+            {
+                rb2d.velocity = Vector2.zero;
+            }
+
         if (!gameover &&!gameclear){
           
 
@@ -48,6 +58,32 @@ public class Player : MonoBehaviour
         
        
     }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "hashigo") {
+            hasigo = true;
+        }
+        if(other.gameObject.tag == "down")
+        {
+            down = true;
+            Debug.Log("Down");
+        }
+        
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "hashigo")
+        {
+            hasigo = false;
+
+        }
+        if(collision.gameObject.tag == "down")
+        {
+            down = false;
+        }
+
+    }
+
 
 
 
