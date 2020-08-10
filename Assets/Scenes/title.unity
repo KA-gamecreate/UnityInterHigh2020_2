@@ -464,7 +464,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\u304A\u5316\u3051\u3068\u4EBA\u9593\u306E\u5192\u967A\npress \"space\"
+  m_Text: "\u304A\u5316\u3051\u3068\u4EBA\u9593\u306E\u5192\u967A(\u4EEE)\npress \"space\"
     button"
 --- !u!222 &1275464530
 CanvasRenderer:

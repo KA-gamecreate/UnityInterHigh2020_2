@@ -14,6 +14,7 @@ TagManager:
   - salt
   - hashigo
   - down
+  - music
   layers:
   - Default
   - TransparentFX

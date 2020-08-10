@@ -23,7 +23,7 @@ public class human : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        Key.gameObject.SetActive(true);
+        
         Key_image.gameObject.SetActive(false);
         hasami.gameObject.SetActive(true);
         hasami_image.gameObject.SetActive(false);
