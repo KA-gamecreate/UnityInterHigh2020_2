@@ -12,10 +12,10 @@ public class music : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        KEY.SetActive(false);
         Kagi.SetActive(false);
+        KEY.SetActive(false);
         score = 0;
-        Debug.Log("start");
+        
         SetCountText();
     }
 
@@ -37,14 +37,15 @@ public class music : MonoBehaviour
     }
     void SetCountText()
     {
-         　　　
-        if(score >= 7)
-        {
-         KEY.SetActive(true);
-        }
-        if(score >= 11)
+
+        if (score >= 11)
         {
             Kagi.SetActive(true);
         }
+        if (score >= 7)
+        {
+         KEY.SetActive(true);
+        }
+        
     }
 }

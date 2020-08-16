@@ -15,6 +15,10 @@ TagManager:
   - hashigo
   - down
   - music
+  - enemy2
+  - poison
+  - kira
+  - kira2
   layers:
   - Default
   - TransparentFX

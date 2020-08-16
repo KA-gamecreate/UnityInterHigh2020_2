@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 23409639}
   - component: {fileID: 23409638}
   m_Layer: 5
-  m_Name: hasamiimage
+  m_Name: matchimage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4852,7 +4852,7 @@ MonoBehaviour:
   Key_image: {fileID: 22038834}
   hasami: {fileID: 974940361}
   hasami_image: {fileID: 23409637}
-  tuta: {fileID: 0}
+  tuta: {fileID: 202602347}
   salt_image: {fileID: 0}
   salt: {fileID: 0}
   horror: {fileID: 0}
@@ -7182,7 +7182,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1820164172
 RectTransform:
   m_ObjectHideFlags: 0

@@ -7,15 +7,18 @@ public class human : MonoBehaviour
     public GameObject Key;
     Animator animator;
     public GameObject Key_image;
+    public GameObject salt_image;
+    public GameObject salt;
+    public GameObject kira_image;
+    public GameObject kira;
+    public GameObject kira2;
+    public GameObject bikkuriimage;
+    public GameObject bikkuri2;
     public GameObject hasami;
     public GameObject hasami_image;
     public GameObject tuta;
-    public GameObject salt_image;
-    public GameObject salt;
-    public GameObject horror;
-    public GameObject bikkuriimage;
-   
-   
+
+
     float speed = 1.5f;
 
 
@@ -25,13 +28,16 @@ public class human : MonoBehaviour
         animator = GetComponent<Animator>();
         
         Key_image.gameObject.SetActive(false);
+        kira.gameObject.SetActive(true);
+        kira2.gameObject.SetActive(true);
+        kira_image.gameObject.SetActive(false);
+        salt.gameObject.SetActive(true);
+        salt_image.gameObject.SetActive(false);
+        bikkuriimage.gameObject.SetActive(false);
+        bikkuri2.gameObject.SetActive(false);
         hasami.gameObject.SetActive(true);
         hasami_image.gameObject.SetActive(false);
         tuta.gameObject.SetActive(true);
-        salt.gameObject.SetActive(true);
-        salt_image.gameObject.SetActive(false);
-        horror.gameObject.SetActive(true);
-        bikkuriimage.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -70,12 +76,7 @@ public class human : MonoBehaviour
             Key_image.gameObject.SetActive(true);
             Debug.Log("key");
         }
-        if (col.gameObject.tag == "hasami")
-        {
-            hasami.gameObject.SetActive(false);
-            hasami_image.gameObject.SetActive(true);
-            Debug.Log("hasami");
-        }
+       
         if (col.gameObject.tag == "salt")
         {
             salt.gameObject.SetActive(false);
@@ -89,11 +90,20 @@ public class human : MonoBehaviour
                 animator.SetInteger("jump", 1);
             }
         }
+        if (col.gameObject.tag == "kira")
+        {
+            kira.gameObject.SetActive(false);
+            kira_image.gameObject.SetActive(true);
            
-            
-         
-   
-       
+        }
+        if (col.gameObject.tag == "kira2")
+        {
+            kira2.gameObject.SetActive(false);
+            kira_image.gameObject.SetActive(true);
+          
+        }
+
+
         if (col.gameObject.tag == "tuta")
         {
             if (hasami_image.gameObject.activeSelf == true)
@@ -102,15 +112,22 @@ public class human : MonoBehaviour
                 hasami_image.gameObject.SetActive(false);
             }
         }
+        if (col.gameObject.tag == "hasami")
+        {
+            hasami.gameObject.SetActive(false);
+            hasami_image.gameObject.SetActive(true);
+            Debug.Log("hasami");
+        }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        
+
         if (collision.gameObject.tag == "enemy")
         {
             if (salt_image.gameObject.activeSelf == true)
             {
                 bikkuriimage.gameObject.SetActive(true);
+
 
                 if (Input.GetKeyDown(KeyCode.A))
                 {
@@ -119,6 +136,29 @@ public class human : MonoBehaviour
                     salt_image.gameObject.SetActive(false);
 
                 }
+
+            }
+        }
+            if (collision.gameObject.tag == "enemy2")
+            {
+                if (salt_image.gameObject.activeSelf == true)
+                {
+                    bikkuri2.gameObject.SetActive(true);
+                    if (Input.GetKeyDown(KeyCode.A))
+                    {
+                        Destroy(collision.gameObject, 1.0f);
+                        Debug.Log("destroy2");
+                        salt_image.gameObject.SetActive(false);
+
+                    }
+                }
+            }
+        if (collision.gameObject.tag == "poison")
+        {
+            if (kira_image.gameObject.activeSelf == true)
+            {
+                Destroy(collision.gameObject);
+                kira_image.gameObject.SetActive(false);
             }
         }
     }
