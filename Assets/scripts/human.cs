@@ -17,6 +17,8 @@ public class human : MonoBehaviour
     public GameObject hasami;
     public GameObject hasami_image;
     public GameObject tuta;
+    public GameObject pikkeru;
+    public GameObject pikkeruimage;
 
 
     float speed = 1.5f;
@@ -38,6 +40,8 @@ public class human : MonoBehaviour
         hasami.gameObject.SetActive(true);
         hasami_image.gameObject.SetActive(false);
         tuta.gameObject.SetActive(true);
+        pikkeru.gameObject.SetActive(true);
+        pikkeruimage.gameObject.SetActive(false); 
     }
 
     // Update is called once per frame
@@ -118,7 +122,26 @@ public class human : MonoBehaviour
             hasami_image.gameObject.SetActive(true);
             Debug.Log("hasami");
         }
+        if (col.gameObject.tag == "pikkeru")
+        {
+            pikkeru.gameObject.SetActive(false);
+            pikkeruimage.gameObject.SetActive(true);
+        }
+
+        if (col.gameObject.tag == "ice")
+        {
+            if (pikkeruimage.gameObject.activeSelf == true)
+            {            
+                if (Input.GetKeyDown(KeyCode.A))
+                {
+                    Destroy(col.gameObject);
+                    Debug.Log("destroy");
+                }
+
+            }
+        }
     }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
 
@@ -153,6 +176,7 @@ public class human : MonoBehaviour
                     }
                 }
             }
+
         if (collision.gameObject.tag == "poison")
         {
             if (kira_image.gameObject.activeSelf == true)

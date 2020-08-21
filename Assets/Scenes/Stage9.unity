@@ -1320,7 +1320,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82028a073fd7490bb10ab4b735c7cbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stage: {fileID: 467996194}
   Opennum: 11
 --- !u!1 &974940361
 GameObject:
@@ -1848,13 +1847,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Key: {fileID: 1820164171}
   Key_image: {fileID: 22038834}
+  salt_image: {fileID: 0}
+  salt: {fileID: 0}
+  kira_image: {fileID: 0}
+  kira: {fileID: 0}
+  kira2: {fileID: 0}
+  bikkuriimage: {fileID: 0}
+  bikkuri2: {fileID: 0}
   hasami: {fileID: 974940361}
   hasami_image: {fileID: 23409637}
   tuta: {fileID: 1222013649}
-  salt_image: {fileID: 0}
-  salt: {fileID: 0}
-  horror: {fileID: 0}
-  bikkuriimage: {fileID: 0}
 --- !u!1 &1222013649
 GameObject:
   m_ObjectHideFlags: 0
@@ -1994,7 +1996,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 2.7186134, y: 0.9385699}
+  m_ConnectedAnchor: {x: 2.6435606, y: 0.9126588}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -2060,7 +2062,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 2800000, guid: c1c0f85e20b604c13845f789a8187bd1, type: 3}
+  m_Texture: {fileID: 2800000, guid: 51cf97116b4c94c7885f6c5ae63a6589, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0

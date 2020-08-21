@@ -19,6 +19,8 @@ TagManager:
   - poison
   - kira
   - kira2
+  - ice
+  - pikkeru
   layers:
   - Default
   - TransparentFX
