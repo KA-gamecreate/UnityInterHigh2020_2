@@ -21,6 +21,10 @@ TagManager:
   - kira2
   - ice
   - pikkeru
+  - Laser
+  - Enemy
+  - umbrella
+  - human
   layers:
   - Default
   - TransparentFX
@@ -30,7 +34,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - particle
   - 
   - 
   - 
@@ -63,4 +67,10 @@ TagManager:
     locked: 0
   - name: Map
     uniqueID: 4093386389
+    locked: 0
+  - name: UI
+    uniqueID: 3455189779
+    locked: 0
+  - name: particle
+    uniqueID: 4180528521
     locked: 0

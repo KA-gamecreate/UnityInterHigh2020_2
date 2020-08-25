@@ -393,8 +393,8 @@ GameObject:
   - component: {fileID: 51415823}
   - component: {fileID: 51415825}
   - component: {fileID: 51415824}
-  - component: {fileID: 51415827}
   - component: {fileID: 51415826}
+  - component: {fileID: 51415827}
   m_Layer: 5
   m_Name: poison
   m_TagString: poison
@@ -468,10 +468,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 9.43347}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -482,7 +482,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 100, y: 100}
+  m_Size: {x: 100, y: 55.97584}
   m_EdgeRadius: 0
 --- !u!114 &51415827
 MonoBehaviour:
@@ -493,9 +493,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 51415822}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 337a2f4b340704524a208560afd427fa, type: 3}
+  m_Script: {fileID: 11500000, guid: da705ff84d3fb44138e9accbfed3a931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  kira_image: {fileID: 186472830}
 --- !u!1 &101585661
 GameObject:
   m_ObjectHideFlags: 0
@@ -2520,8 +2521,8 @@ GameObject:
   - component: {fileID: 705959702}
   - component: {fileID: 705959704}
   - component: {fileID: 705959703}
-  - component: {fileID: 705959706}
   - component: {fileID: 705959705}
+  - component: {fileID: 705959706}
   m_Layer: 5
   m_Name: poison2
   m_TagString: poison
@@ -2595,7 +2596,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -2620,9 +2621,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 705959701}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 337a2f4b340704524a208560afd427fa, type: 3}
+  m_Script: {fileID: 11500000, guid: da705ff84d3fb44138e9accbfed3a931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  kira_image: {fileID: 186472830}
 --- !u!1 &744892473
 GameObject:
   m_ObjectHideFlags: 0
@@ -2910,8 +2912,8 @@ GameObject:
   - component: {fileID: 834704360}
   - component: {fileID: 834704362}
   - component: {fileID: 834704361}
-  - component: {fileID: 834704364}
   - component: {fileID: 834704363}
+  - component: {fileID: 834704364}
   m_Layer: 5
   m_Name: poison3
   m_TagString: poison
@@ -2985,7 +2987,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -3010,9 +3012,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 834704359}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 337a2f4b340704524a208560afd427fa, type: 3}
+  m_Script: {fileID: 11500000, guid: da705ff84d3fb44138e9accbfed3a931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  kira_image: {fileID: 186472830}
 --- !u!1 &840327010
 GameObject:
   m_ObjectHideFlags: 0
@@ -3972,7 +3975,7 @@ GameObject:
   - component: {fileID: 1194828301}
   m_Layer: 5
   m_Name: human
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4092,6 +4095,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Key: {fileID: 1820164171}
   Key_image: {fileID: 22038834}
+  umbrellaimage: {fileID: 0}
+  umbrellaimage2: {fileID: 0}
   salt_image: {fileID: 23409637}
   salt: {fileID: 536100306}
   kira_image: {fileID: 186472830}
@@ -4102,6 +4107,8 @@ MonoBehaviour:
   hasami: {fileID: 0}
   hasami_image: {fileID: 0}
   tuta: {fileID: 0}
+  pikkeru: {fileID: 0}
+  pikkeruimage: {fileID: 0}
 --- !u!1 &1211151432
 GameObject:
   m_ObjectHideFlags: 0
@@ -4515,6 +4522,7 @@ GameObject:
   - component: {fileID: 1297963604}
   - component: {fileID: 1297963606}
   - component: {fileID: 1297963607}
+  - component: {fileID: 1297963608}
   m_Layer: 0
   m_Name: character
   m_TagString: Player
@@ -4595,6 +4603,32 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!61 &1297963608
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1297963603}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.8561182, y: -1.7121964}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 48.28775, y: 83.42439}
+  m_EdgeRadius: 0
 --- !u!1 &1316546256
 GameObject:
   m_ObjectHideFlags: 0
@@ -6431,6 +6465,7 @@ GameObject:
   - component: {fileID: 1849228189}
   - component: {fileID: 1849228192}
   - component: {fileID: 1849228191}
+  - component: {fileID: 1849228193}
   m_Layer: 5
   m_Name: poison4
   m_TagString: poison
@@ -6504,7 +6539,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -6532,6 +6567,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 337a2f4b340704524a208560afd427fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1849228193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849228187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da705ff84d3fb44138e9accbfed3a931, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kira_image: {fileID: 186472830}
 --- !u!1 &1862837452
 GameObject:
   m_ObjectHideFlags: 0
@@ -7284,7 +7332,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.27, y: -10.35}
+  m_AnchoredPosition: {x: 1.27, y: -15.01}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &2036644219
@@ -7632,7 +7680,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.68, y: -4.98}
+  m_AnchoredPosition: {x: -2.68, y: -8.17}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2121426169

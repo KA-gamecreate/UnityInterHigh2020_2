@@ -30,28 +30,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (hasigo == true)
-        //{
-
-            //if (Input.GetKeyDown("up"))
-            //{
-               // Debug.Log("hasigo");
-                //transform.position += new Vector3(0, 7, 0);
-                
-              
-            //}
-
-        //}
-        //if(down == true){
-            //Debug.Log("down");
-            //if (Input.GetKeyDown("down"))
-            //{
-
-                //transform.position += new Vector3(0, -7, 0);
-                
-                
-            //}
-        //}
+       
 
         if (!gameover &&!gameclear){
           
@@ -96,7 +75,7 @@ public class Player : MonoBehaviour
     }
 
 
-
+    
 
     private void Gameover()
     {

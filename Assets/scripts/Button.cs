@@ -6,10 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class Button : MonoBehaviour
 {
+    public GameObject menu;
+    public GameObject leftway;
+    
     // Start is called before the first frame update
     void Start()
     {
-
+        menu.gameObject.transform.Translate(3, 0, 0);
     }
 
     // Update is called once per frame
@@ -73,6 +76,19 @@ public class Button : MonoBehaviour
     public void Stage12()
     {
         SceneManager.LoadScene("Stage10");
+    }
+    public void Go()
+    {
+        SceneManager.LoadScene("select2");
+    }
+    public void right()
+    {
+        menu.gameObject.transform.Translate(3, 0, 0);
+
+    }
+    public void left()
+    {
+        menu.gameObject.transform.Translate(-3, 0, 0);
     }
 
 }

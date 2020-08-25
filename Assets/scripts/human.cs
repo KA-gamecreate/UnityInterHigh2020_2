@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class human : MonoBehaviour
 {
+    bool gameover = false;
     public GameObject Key;
     Animator animator;
     public GameObject Key_image;
+
     public GameObject salt_image;
     public GameObject salt;
     public GameObject kira_image;
@@ -19,6 +21,8 @@ public class human : MonoBehaviour
     public GameObject tuta;
     public GameObject pikkeru;
     public GameObject pikkeruimage;
+    public GameObject umbrellaimage;
+    public GameObject umbrellaimage2;
 
 
     float speed = 1.5f;
@@ -28,7 +32,9 @@ public class human : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        
+
+        umbrellaimage.gameObject.SetActive(false);
+        umbrellaimage2.gameObject.SetActive(true);
         Key_image.gameObject.SetActive(false);
         kira.gameObject.SetActive(true);
         kira2.gameObject.SetActive(true);
@@ -50,30 +56,54 @@ public class human : MonoBehaviour
         if (Input.GetKey("right"))
         {
             animator.SetInteger("Chara", 1);
+            
         }
 
         if (Input.GetKey("left"))
         {
             animator.SetInteger("Chara", 1);
+            
         }
         if (Input.GetKeyUp("right"))
         {
             animator.SetInteger("Chara", 0);
+            
         }
         if (Input.GetKeyUp("left"))
         {
             animator.SetInteger("Chara", 0);
+            
         }
         if (Input.GetKeyUp(KeyCode.J))
         {
             animator.SetInteger("jump", 0);
+            
         }
+        if (umbrellaimage.gameObject.activeSelf == true)
+        {
+            if (Input.GetKeyUp(KeyCode.A))
+            {
+                umbrellaimage2.gameObject.SetActive(true);
+                umbrellaimage.gameObject.SetActive(false);
+                Debug.Log("close");
+            }
+        }
+        if (umbrellaimage2.gameObject.activeSelf == true)
+        {
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                umbrellaimage.gameObject.SetActive(true);
+                umbrellaimage2.gameObject.SetActive(false);
+                Debug.Log("open");
+            }
+        }
+       
 
     }
     
     void OnCollisionStay2D(Collision2D col)
     {
-
+ 
         if (col.gameObject.tag == "Key")
         {
             Key.gameObject.SetActive(false);
@@ -116,6 +146,7 @@ public class human : MonoBehaviour
                 hasami_image.gameObject.SetActive(false);
             }
         }
+       
         if (col.gameObject.tag == "hasami")
         {
             hasami.gameObject.SetActive(false);
@@ -134,15 +165,16 @@ public class human : MonoBehaviour
             {            
                 if (Input.GetKeyDown(KeyCode.A))
                 {
-                    Destroy(col.gameObject);
+                    Destroy(col.gameObject,1.0f);
                     Debug.Log("destroy");
+                    animator.SetInteger("attack", 1);
                 }
 
             }
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
 
         if (collision.gameObject.tag == "enemy")
@@ -157,11 +189,14 @@ public class human : MonoBehaviour
                     Destroy(collision.gameObject, 1.0f);
                     Debug.Log("destroy");
                     salt_image.gameObject.SetActive(false);
+                    animator.SetInteger("attack", 1);
+                    Invoke("AnimeReset", 1);
 
                 }
 
             }
         }
+
             if (collision.gameObject.tag == "enemy2")
             {
                 if (salt_image.gameObject.activeSelf == true)
@@ -172,19 +207,13 @@ public class human : MonoBehaviour
                         Destroy(collision.gameObject, 1.0f);
                         Debug.Log("destroy2");
                         salt_image.gameObject.SetActive(false);
-
+                        animator.SetInteger("attack", 1);
+                        Invoke("AnimeReset", 1);
                     }
                 }
             }
 
-        if (collision.gameObject.tag == "poison")
-        {
-            if (kira_image.gameObject.activeSelf == true)
-            {
-                Destroy(collision.gameObject);
-                kira_image.gameObject.SetActive(false);
-            }
-        }
+        
     }
 
 
@@ -192,6 +221,12 @@ public class human : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         bikkuriimage.gameObject.SetActive(false);
+    }
+
+    void AnimeReset()
+    {
+        animator.SetInteger("attack", 0);
+        Debug.Log("a");
     }
    
 
