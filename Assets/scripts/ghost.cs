@@ -6,11 +6,13 @@ public class ghost : MonoBehaviour
 {
     BoxCollider2D boxCollider2D;
     public GameObject bikkuri;
+    public GameObject mybikkuri;
     Animator animator;
     // Start is called before the first frame update
     void Start()
     {
         bikkuri.gameObject.SetActive(false);
+        mybikkuri.gameObject.SetActive(false);
         animator = GetComponent<Animator>();
     }
 
@@ -36,6 +38,18 @@ public class ghost : MonoBehaviour
     void OnCollisionExit2D(Collision2D collision)
     {
         bikkuri.gameObject.SetActive(false);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "himawari")
+        {
+            mybikkuri.gameObject.SetActive(true);
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        mybikkuri.gameObject.SetActive(false);
     }
 
 

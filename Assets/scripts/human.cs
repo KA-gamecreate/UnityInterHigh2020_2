@@ -171,12 +171,12 @@ public class human : MonoBehaviour
                 bikkuri2.gameObject.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.A))
                 {
-                   
+                    Destroy(collision.gameObject, 1.0f);
                     Debug.Log("destroy2");
                     salt_image.gameObject.SetActive(false);
                     animator.SetInteger("attack", 1);
                     Invoke("AnimeReset", 1);
-                    Destroy(collision.gameObject, 1.0f);
+                    
                 }
             }
         }

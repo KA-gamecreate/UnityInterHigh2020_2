@@ -25,6 +25,8 @@ TagManager:
   - Enemy
   - umbrella
   - human
+  - water
+  - himawari
   layers:
   - Default
   - TransparentFX
