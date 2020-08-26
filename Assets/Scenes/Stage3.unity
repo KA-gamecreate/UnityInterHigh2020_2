@@ -332,7 +332,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 12.000183, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -343,7 +343,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 100, y: 100}
+  m_Size: {x: 75.99963, y: 100}
   m_EdgeRadius: 0
 --- !u!114 &46106828
 MonoBehaviour:
@@ -4098,20 +4098,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Key: {fileID: 1820164171}
   Key_image: {fileID: 22038834}
+  bikkuri2: {fileID: 840327010}
   salt_image: {fileID: 23409637}
   salt: {fileID: 536100306}
   kira_image: {fileID: 186472830}
   kira: {fileID: 744892473}
   kira2: {fileID: 2121426167}
   bikkuriimage: {fileID: 992990897}
-  bikkuri2: {fileID: 840327010}
   hasami: {fileID: 0}
   hasami_image: {fileID: 0}
   tuta: {fileID: 0}
   pikkeru: {fileID: 0}
   pikkeruimage: {fileID: 0}
-  umbrellaimage: {fileID: 0}
-  umbrellaimage2: {fileID: 0}
 --- !u!1 &1211151432
 GameObject:
   m_ObjectHideFlags: 0
@@ -4582,6 +4580,8 @@ MonoBehaviour:
   gameovercanvas: {fileID: 1794333922}
   gameclearcanvas: {fileID: 372603402}
   rb2d: {fileID: 0}
+  umbrellaimage: {fileID: 0}
+  umbrellaimage2: {fileID: 0}
 --- !u!50 &1297963607
 Rigidbody2D:
   serializedVersion: 4
@@ -6142,7 +6142,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -116, y: 11}
+  m_AnchoredPosition: {x: -131, y: 11}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1835973375
@@ -6170,7 +6170,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 10.500319, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -6181,7 +6181,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 100, y: 100}
+  m_Size: {x: 78.99936, y: 100}
   m_EdgeRadius: 0
 --- !u!114 &1835973377
 MonoBehaviour:

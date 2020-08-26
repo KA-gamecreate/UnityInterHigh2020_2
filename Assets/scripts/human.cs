@@ -8,14 +8,14 @@ public class human : MonoBehaviour
     public GameObject Key;
     Animator animator;
     public GameObject Key_image;
-
+    public GameObject bikkuri2;
     public GameObject salt_image;
     public GameObject salt;
     public GameObject kira_image;
     public GameObject kira;
     public GameObject kira2;
     public GameObject bikkuriimage;
-    public GameObject bikkuri2;
+    
     public GameObject hasami;
     public GameObject hasami_image;
     public GameObject tuta;
@@ -32,13 +32,15 @@ public class human : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         Key_image.gameObject.SetActive(false);
+        bikkuri2.gameObject.SetActive(false);
+        salt.gameObject.SetActive(true);
+        salt_image.gameObject.SetActive(false);
         kira.gameObject.SetActive(true);
         kira2.gameObject.SetActive(true);
         kira_image.gameObject.SetActive(false);
-        salt.gameObject.SetActive(true);
-        salt_image.gameObject.SetActive(false);
+       
         bikkuriimage.gameObject.SetActive(false);
-        bikkuri2.gameObject.SetActive(false);
+        
         hasami.gameObject.SetActive(true);
         hasami_image.gameObject.SetActive(false);
         tuta.gameObject.SetActive(true);
@@ -162,7 +164,22 @@ public class human : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        if (collision.gameObject.tag == "enemy2")
+        {
+            if (salt_image.gameObject.activeSelf == true)
+            {
+                bikkuri2.gameObject.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.A))
+                {
+                   
+                    Debug.Log("destroy2");
+                    salt_image.gameObject.SetActive(false);
+                    animator.SetInteger("attack", 1);
+                    Invoke("AnimeReset", 1);
+                    Destroy(collision.gameObject, 1.0f);
+                }
+            }
+        }
         if (collision.gameObject.tag == "enemy")
         {
             if (salt_image.gameObject.activeSelf == true)
@@ -183,21 +200,7 @@ public class human : MonoBehaviour
             }
         }
 
-            if (collision.gameObject.tag == "enemy2")
-            {
-                if (salt_image.gameObject.activeSelf == true)
-                {
-                    bikkuri2.gameObject.SetActive(true);
-                    if (Input.GetKeyDown(KeyCode.A))
-                    {
-                        Destroy(collision.gameObject, 1.0f);
-                        Debug.Log("destroy2");
-                        salt_image.gameObject.SetActive(false);
-                        animator.SetInteger("attack", 1);
-                        Invoke("AnimeReset", 1);
-                    }
-                }
-            }
+        
 
         
     }
@@ -206,7 +209,9 @@ public class human : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        bikkuri2.gameObject.SetActive(false);
         bikkuriimage.gameObject.SetActive(false);
+        
     }
 
     void AnimeReset()

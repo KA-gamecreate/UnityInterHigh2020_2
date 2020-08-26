@@ -6,8 +6,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
-
     float speed = 1.5f;
     int key = 0;
     bool gameover = false;
