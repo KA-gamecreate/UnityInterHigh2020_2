@@ -21,8 +21,7 @@ public class human : MonoBehaviour
     public GameObject tuta;
     public GameObject pikkeru;
     public GameObject pikkeruimage;
-    public GameObject umbrellaimage;
-    public GameObject umbrellaimage2;
+
 
 
     float speed = 1.5f;
@@ -32,9 +31,6 @@ public class human : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-
-        umbrellaimage.gameObject.SetActive(false);
-        umbrellaimage2.gameObject.SetActive(true);
         Key_image.gameObject.SetActive(false);
         kira.gameObject.SetActive(true);
         kira2.gameObject.SetActive(true);
@@ -79,24 +75,7 @@ public class human : MonoBehaviour
             animator.SetInteger("jump", 0);
             
         }
-        if (umbrellaimage.gameObject.activeSelf == true)
-        {
-            if (Input.GetKeyUp(KeyCode.A))
-            {
-                umbrellaimage2.gameObject.SetActive(true);
-                umbrellaimage.gameObject.SetActive(false);
-                Debug.Log("close");
-            }
-        }
-        if (umbrellaimage2.gameObject.activeSelf == true)
-        {
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                umbrellaimage.gameObject.SetActive(true);
-                umbrellaimage2.gameObject.SetActive(false);
-                Debug.Log("open");
-            }
-        }
+       
        
 
     }
@@ -142,8 +121,14 @@ public class human : MonoBehaviour
         {
             if (hasami_image.gameObject.activeSelf == true)
             {
-                tuta.gameObject.SetActive(false);
-                hasami_image.gameObject.SetActive(false);
+                if (Input.GetKeyDown(KeyCode.A))
+                {
+                    Destroy(col.gameObject, 1.0f);
+                    Debug.Log("destroy");
+                    animator.SetInteger("attack", 1);
+                    Invoke("AnimeReset", 1);
+                    hasami_image.gameObject.SetActive(true);
+                }
             }
         }
        
@@ -168,6 +153,7 @@ public class human : MonoBehaviour
                     Destroy(col.gameObject,1.0f);
                     Debug.Log("destroy");
                     animator.SetInteger("attack", 1);
+                    Invoke("AnimeReset", 1);
                 }
 
             }

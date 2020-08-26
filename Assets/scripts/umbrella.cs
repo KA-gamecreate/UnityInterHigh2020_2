@@ -5,8 +5,7 @@ using UnityEngine;
 public class umbrella : MonoBehaviour
 {
     public GameObject player;
-    private float hp = 50;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +17,7 @@ public class umbrella : MonoBehaviour
     {
       
 
-        transform.position = new Vector3(player.transform.position.x, -0.2f, 0);
+        transform.position = new Vector3(player.transform.position.x, player.transform.position.y+0.5f, 0);
         
     }
 }

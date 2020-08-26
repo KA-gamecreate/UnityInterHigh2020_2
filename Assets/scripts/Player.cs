@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     public GameObject gameovercanvas;
     public GameObject gameclearcanvas;
     public Rigidbody2D rb2d;
+    public GameObject umbrellaimage;
+    public GameObject umbrellaimage2;
 
 
     // Start is called before the first frame update
@@ -25,6 +27,8 @@ public class Player : MonoBehaviour
     {
         gameovercanvas.SetActive(false);
         gameclearcanvas.SetActive(false);
+        umbrellaimage.gameObject.SetActive(false);
+        umbrellaimage2.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
@@ -49,7 +53,25 @@ public class Player : MonoBehaviour
                 {
                     transform.localScale = new Vector3(key, 1, 1);
                 }
+            if (umbrellaimage.gameObject.activeSelf == true)
+            {
+                if (Input.GetKeyUp(KeyCode.U))
+                {
+                    umbrellaimage2.gameObject.SetActive(true);
+                    umbrellaimage.gameObject.SetActive(false);
+                    Debug.Log("close");
+                }
             }
+            if (umbrellaimage2.gameObject.activeSelf == true)
+            {
+                if (Input.GetKeyDown(KeyCode.U))
+                {
+                    umbrellaimage.gameObject.SetActive(true);
+                    umbrellaimage2.gameObject.SetActive(false);
+                    Debug.Log("open");
+                }
+            }
+        }
         
        
     }
