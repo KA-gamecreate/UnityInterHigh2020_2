@@ -8,8 +8,8 @@ public class Player : MonoBehaviour
 {
     float speed = 1.5f;
     int key = 0;
-    bool gameover = false;
-    bool gameclear = false;
+    public bool gameover = false;
+    public bool gameclear = false;
     bool hasigo = false;
     bool down = false;
     bool enemy = false;

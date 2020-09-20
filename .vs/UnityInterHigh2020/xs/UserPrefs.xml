@@ -1,16 +1,17 @@
 ﻿<Properties StartupConfiguration="{E9E6069E-0B6D-C33E-4628-52AE66724C5F}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/himawari.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/dark.cs">
     <Files>
       <File FileName="Assets/scripts/gameoverrange.cs" Line="4" Column="27" IsPinned="True" />
-      <File FileName="Assets/scripts/Charachange.cs" Line="84" Column="1" />
-      <File FileName="Assets/scripts/Player.cs" Line="8" Column="2" />
-      <File FileName="Assets/scripts/camera.cs" Line="11" Column="2" />
-      <File FileName="Assets/scripts/ghost.cs" Line="41" Column="1" />
-      <File FileName="Assets/scripts/goal.cs" Line="27" Column="49" />
-      <File FileName="Assets/scripts/Stage.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/human.cs" Line="174" Column="57" />
-      <File FileName="Assets/scripts/music.cs" Line="7" Column="5" />
+      <File FileName="Assets/scripts/Charachange.cs" />
+      <File FileName="Assets/scripts/Player.cs" />
+      <File FileName="Assets/scripts/camera.cs" />
+      <File FileName="Assets/scripts/ghost.cs" />
+      <File FileName="Assets/scripts/goal.cs" />
+      <File FileName="Assets/scripts/Stage.cs" />
+      <File FileName="Assets/scripts/human.cs" />
+      <File FileName="Assets/scripts/music.cs" />
       <File FileName="Assets/scripts/himawari.cs" Line="10" Column="9" />
+      <File FileName="Assets/scripts/dark.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -22,7 +23,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="8d820b47-e3eb-4fd3-92fd-f581b0f038bd" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="0e1f1e3c-d783-43af-84dd-d33eccd0a8ab" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
